@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title Pie57
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      .row
+        .col-md-3
+        .col-md-6= yield
