@@ -41,4 +41,9 @@ gem 'spring',        group: :development
 gem 'haml-rails'
 gem "less-rails"
 gem 'twitter-bootstrap-rails', git: "git@github.com:seyhunak/twitter-bootstrap-rails.git", branch: "bootstrap3"
+gem "kaminari"
+gem 'browser-timezone-rails'
+gem 'bootstrap-kaminari-views'
+
+
 

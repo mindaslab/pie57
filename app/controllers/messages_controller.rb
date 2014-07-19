@@ -4,7 +4,9 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.order('time desc')
+    @messages = @messages.search(params[:s]) if params[:s] and not params[:s].strip.empty?
+    @messages = @messages.page(params[:page]).per(7)
   end
 
   # GET /messages/1
@@ -25,10 +27,10 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
+    @message.time = Time.now
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to messages_path, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }

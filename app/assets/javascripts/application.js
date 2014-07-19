@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require browser_timezone_rails/application.js
 //= require turbolinks
 //= require_tree .

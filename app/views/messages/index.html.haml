@@ -1,8 +1,10 @@
 .action
-  = form_tag("#") do
-    = search_field_tag :s
+  = form_tag(messages_path, method: :get) do
+    = link_to "/", "/", class: "btn btn-danger" 
+    = search_field_tag :s, params[:s]
     = submit_tag "Search", class: "btn btn-primary"
-  = link_to 'New Message', new_message_path, class: "btn btn-success btn-lg"
+    = link_to 'New Message', new_message_path, class: "btn btn-success"
 
 = render @messages
+= paginate @messages, theme: 'twitter-bootstrap-3'
 
