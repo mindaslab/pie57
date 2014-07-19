@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.order('time desc')
     @messages = @messages.search(params[:s]) if params[:s] and not params[:s].strip.empty?
-    @messages = @messages.page(params[:page]).per(7)
+    @messages = @messages.page(params[:page])
   end
 
   # GET /messages/1
