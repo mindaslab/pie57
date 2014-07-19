@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719122057) do
+ActiveRecord::Schema.define(version: 20140719180756) do
+
+  create_table "keyvals", force: true do |t|
+    t.string   "key"
+    t.string   "val"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.text     "content"
