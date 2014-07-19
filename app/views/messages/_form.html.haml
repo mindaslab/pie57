@@ -7,7 +7,6 @@
           %li= msg
 
   .field
-    = f.label :content
     = f.text_area :content
   .actions
-    = f.submit 'Save'
+    = f.submit 'Create Message', class: "btn btn-primary"

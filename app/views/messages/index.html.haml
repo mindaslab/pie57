@@ -1,19 +1,8 @@
-%h1 Listing messages
+.action
+  = form_tag("#") do
+    = search_field_tag :s
+    = submit_tag "Search", class: "btn btn-primary"
+  = link_to 'New Message', new_message_path, class: "btn btn-success btn-lg"
 
-%table
-  %tr
-    %th Content
-    %th
-    %th
-    %th
+= render @messages
 
-  - @messages.each do |message|
-    %tr
-      %td= message.content
-      %td= link_to 'Show', message
-      %td= link_to 'Edit', edit_message_path(message)
-      %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Message', new_message_path
